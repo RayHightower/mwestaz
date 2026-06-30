@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian West Properties | Premier Commercial Real Estate | Phoenix, AZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        
+        :root {
+            --primary: #0f172a;
+            --accent: #b45309;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #b45309;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #b45309, #d97706);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .modal {
+            animation: modalPop 0.3s ease forwards;
+        }
+
+        @keyframes modalPop {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('https://picsum.photos/id/1018/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-6 lg:px-12 flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-2xl tracking-tighter">MW</span>
+                    </div>
+                    <div>
+                        <div class="font-semibold text-2xl tracking-tighter text-slate-900">Meridian West</div>
+                        <div class="text-[10px] text-slate-500 -mt-1 tracking-[2px]">PROPERTIES</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+                    <a href="#about" class="nav-link text-slate-600 hover:text-slate-900">About</a>
+                    <a href="#services" class="nav-link text-slate-600 hover:text-slate-900">Services</a>
+                    <a href="#projects" class="nav-link text-slate-600 hover:text-slate-900">Projects</a>
+                    <a href="#contact" class="nav-link text-slate-600 hover:text-slate-900">Contact</a>
+                </div>
+
+                <div class="hidden md:block">
+                    <a href="#contact" 
+                       class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold rounded-2xl transition-colors flex items-center gap-x-2">
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-slate-600 hover:text-slate-900">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t bg-white px-6 py-6">
+            <div class="flex flex-col gap-y-4 text-lg font-medium">
+                <a href="#about" class="py-2 text-slate-700">About</a>
+                <a href="#services" class="py-2 text-slate-700">Services</a>
+                <a href="#projects" class="py-2 text-slate-700">Projects</a>
+                <a href="#contact" class="py-2 text-slate-700">Contact</a>
+                <a href="#contact" class="mt-4 px-6 py-3.5 bg-slate-900 text-white text-center rounded-2xl font-semibold">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-[100dvh] min-h-[620px] flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 pt-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full mb-6">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-sm font-medium text-slate-700">Phoenix, Arizona</span>
+                </div>
+                
+                <h1 class="text-6xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.05]">
+                    Creating exceptional<br>commercial environments<br>for the 21st century.
+                </h1>
+                
+                <p class="mt-6 text-xl text-white/90 max-w-lg">
+                    Premier office and retail properties in the metropolitan Phoenix market with carefully chosen locations and amenities that deliver lasting value.
+                </p>
+                
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#projects" 
+                       class="px-8 py-4 bg-white text-slate-900 hover:bg-slate-100 font-semibold rounded-3xl transition-all flex items-center gap-x-3 shadow-lg">
+                        <span>Explore Our Projects</span>
+                    </a>
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-white/60 hover:bg-white/10 text-white font-semibold rounded-3xl transition-all flex items-center gap-x-3">
+                        <span>Contact Our Team</span>
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-x-4 text-white/70 text-sm">
+                    <div>Adding lasting value for the individuals and communities impacted by our work.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:block">
+            <a href="#about" class="flex flex-col items-center text-white/60 hover:text-white transition-colors">
+                <span class="text-xs tracking-[2px] mb-1">SCROLL TO BEGIN</span>
+                <i class="fa-solid fa-chevron-down text-lg animate-bounce"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-screen-2xl mx-auto px-6 lg:px-12 pt-20 pb-16">
+        <div class="grid lg:grid-cols-12 gap-x-16 gap-y-12">
+            
+            <!-- Mission & History -->
+            <div class="lg:col-span-7">
+                <div class="mb-8">
+                    <span class="text-amber-700 font-semibold tracking-widest text-sm">OUR STORY</span>
+                    <h2 class="section-header text-5xl font-semibold tracking-tighter mt-3">Meridian West Properties</h2>
+                </div>
+                
+                <div class="prose prose-lg max-w-none text-slate-600">
+                    <p class="text-xl">Meridian West Properties LLC creates office and commercial environments for the 21st century.</p>
+                    
+                    <h3 class="font-semibold text-2xl text-slate-900 mt-10 mb-3">Our Mission</h3>
+                    <p>To enthusiastically develop real estate while adding lasting value for the individuals and communities impacted by our work. By devoting ourselves to constant, never-ending improvement, we strive to be innovators in planning, design and application, while exceeding expectations.</p>
+                    
+                    <h3 class="font-semibold text-2xl text-slate-900 mt-10 mb-3">Our History</h3>
+                    <p>Meridian West Development, LLC was formed in 2003, but its roots were nurtured decades before in family businesses in Chicago and Connecticut. We are the culmination of over 30 years of experience in business and commercial real estate.</p>
+                    
+                    <h3 class="font-semibold text-2xl text-slate-900 mt-10 mb-3">Our Focus</h3>
+                    <p>We believe in doing one thing, and doing it right. Our single focus is the development of commercial properties — efficient, attractive, comfortable and productive environments for business in the most desirable locations.</p>
+                </div>
+            </div>
+            
+            <!-- Team -->
+            <div class="lg:col-span-5">
+                <div class="sticky top-24">
+                    <span class="text-amber-700 font-semibold tracking-widest text-sm">THE TEAM</span>
+                    <h3 class="text-4xl font-semibold tracking-tighter mt-2 mb-8">Meet the people behind Meridian West.</h3>
+                    
+                    <!-- Greg Gienko -->
+                    <div class="flex gap-5 mb-8">
+                        <img src="https://picsum.photos/id/1005/120/120" alt="Greg Gienko" 
+                             class="w-20 h-20 rounded-2xl object-cover ring-1 ring-slate-200 flex-shrink-0">
+                        <div>
+                            <div class="font-semibold text-xl">Greg Gienko</div>
+                            <div class="text-amber-700 font-medium">Principal &amp; Founder</div>
+                            <p class="text-sm text-slate-600 mt-2 leading-snug">Over 25 years of experience in diversified business development. Actively engaged in numerous development projects in Chicago, Phoenix, and the greater Valley area. Law degree from DePaul University.</p>
+                            <div class="mt-3 text-sm">
+                                <a href="mailto:ggienko@mwestaz.com" class="text-amber-700 hover:underline">ggienko@mwestaz.com</a><br>
+                                <a href="tel:6029120777" class="text-slate-500 hover:text-slate-700">602-912-0777</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kate Deisner -->
+                    <div class="flex gap-5">
+                        <img src="https://picsum.photos/id/1011/120/120" alt="Kate Deisner" 
+                             class="w-20 h-20 rounded-2xl object-cover ring-1 ring-slate-200 flex-shrink-0">
+                        <div>
+                            <div class="font-semibold text-xl">Kate Deisner</div>
+                            <div class="text-amber-700 font-medium">Office Manager</div>
+                            <p class="text-sm text-slate-600 mt-2 leading-snug">Joined Meridian West in 2008. Coordinates project management and accounts payable. Oversees office organization and handles all administrative activities.</p>
+                            <div class="mt-3 text-sm">
+                                <a href="mailto:kdeisner@mwestaz.com" class="text-amber-700 hover:underline">kdeisner@mwestaz.com</a><br>
+                                <a href="tel:6029120777" class="text-slate-500 hover:text-slate-700">602-912-0777</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-white py-16 border-y border-slate-200">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="max-w-2xl mb-12">
+                <span class="text-amber-700 font-semibold tracking-widest text-sm">WHAT WE DO</span>
+                <h2 class="section-header text-5xl font-semibold tracking-tighter mt-3">Services</h2>
+                <p class="mt-4 text-xl text-slate-600">We develop and build unique commercial office and retail environments through careful site selection, planning, and execution.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Service Cards -->
+                <div class="service-card bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-map-marked text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl mb-3">Land Acquisition</h4>
+                    <p class="text-slate-600 text-sm">Strategic identification and acquisition of prime development sites in high-growth Phoenix metro locations.</p>
+                </div>
+                
+                <div class="service-card bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-drafting-compass text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl mb-3">Land Planning</h4>
+                    <p class="text-slate-600 text-sm">Thoughtful site planning and entitlements that maximize value and create exceptional mixed-use environments.</p>
+                </div>
+                
+                <div class="service-card bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-pencil-ruler text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl mb-3">Design</h4>
+                    <p class="text-slate-600 text-sm">Innovative architecture and interior design that deliver luxurious, convenient, and high-value work and retail spaces.</p>
+                </div>
+                
+                <div class="service-card bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hard-hat text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl mb-3">Development</h4>
+                    <p class="text-slate-600 text-sm">Full-service development from concept through construction with a focus on superior quality and craftsmanship.</p>
+                </div>
+                
+                <div class="service-card bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chart-line text-2xl"></i>
+                    </div>
+                    <h4 class="font-semibold text-xl mb-3">Asset Management</h4>
+                    <p class="text-slate-600 text-sm">Ongoing management and optimization of properties to maximize long-term value for owners and tenants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-20">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10">
+            <div>
+                <span class="text-amber-700 font-semibold tracking-widest text-sm">OUR WORK</span>
+                <h2 class="section-header text-5xl font-semibold tracking-tighter mt-2">Current Projects</h2>
+            </div>
+            <p class="mt-4 lg:mt-0 max-w-md text-slate-600">Exceptional properties at prime locations throughout the greater Phoenix metropolitan area.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- AZ/202 - Featured -->
+            <div onclick="showModal('az202')" class="project-card bg-white rounded-3xl overflow-hidden border border-slate-200 cursor-pointer group">
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1016/800/600')"></div>
+                <div class="p-7">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-semibold text-2xl tracking-tight">AZ/202</h4>
+                            <p class="text-amber-700 text-sm font-medium">Chandler, AZ • Gateway to Downtown</p>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full font-medium self-start">Featured</span>
+                    </div>
+                    <p class="mt-4 text-sm text-slate-600 line-clamp-3">Premier mixed-use development at the northwest corner of Arizona Avenue &amp; Loop 202 with outstanding visibility and access from the SanTan Freeway.</p>
+                    <div class="mt-5 flex items-center text-amber-700 font-medium text-sm group-hover:underline">
+                        View details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rose Garden Office Park -->
+            <div onclick="showModal('rose-garden')" class="project-card bg-white rounded-3xl overflow-hidden border border-slate-200 cursor-pointer group">
+                <div class="h-56 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/160/800/600')"></div>
+                <div class="p-7">
+                    <h4 class="font-semibold text-2xl tracking-tight">Rose Garden Office Park</h4>
+                    <p class="text-amber-700 text-sm font-medium">Phoenix, AZ</p>
+                    <p class="mt-4 text-sm text-slate-600 line-clamp-3">Three single-story Class A office buildings totaling ±17,800 SF. Excellent location near John C. Lincoln Hospital and major freeways.</p>
+                    <div class="mt-5 flex items-center text-amber-700 font-medium text-sm group-hover:underline">
+                        View details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Other Projects -->
+            <div class="project-card bg-white rounded-3xl p-7 border border-slate-200 flex flex-col">
+                <div>
+                    <h4 class="font-semibold text-xl">Cooper &amp; 202 Crossing</h4>
+                    <p class="text-sm text-amber-700 mt-1">Prime Phoenix Metro Location</p>
+                    <p class="mt-4 text-sm text-slate-600">Exceptional office and retail development in a high-growth corridor.</p>
+                </div>
+                <div class="mt-auto pt-6 text-xs text-slate-400">Details available upon request</div>
+            </div>
+            
+            <div class="project-card bg-white rounded-3xl p-7 border border-slate-200 flex flex-col">
+                <div>
+                    <h4 class="font-semibold text-xl">V3 Corporate Center</h4>
+                    <p class="text-sm text-amber-700 mt-1">Prime Phoenix Metro Location</p>
+                    <p class="mt-4 text-sm text-slate-600">Modern corporate office environment designed for today's leading businesses.</p>
+                </div>
+                <div class="mt-auto pt-6 text-xs text-slate-400">Details available upon request</div>
+            </div>
+            
+            <div class="project-card bg-white rounded-3xl p-7 border border-slate-200 flex flex-col">
+                <div>
+                    <h4 class="font-semibold text-xl">The Fields of Surprise</h4>
+                    <p class="text-sm text-amber-700 mt-1">Prime Phoenix Metro Location</p>
+                    <p class="mt-4 text-sm text-slate-600">Strategic mixed-use development in one of the Valley’s fastest growing areas.</p>
+                </div>
+                <div class="mt-auto pt-6 text-xs text-slate-400">Details available upon request</div>
+            </div>
+            
+            <div class="project-card bg-white rounded-3xl p-7 border border-slate-200 flex flex-col">
+                <div>
+                    <h4 class="font-semibold text-xl">Brookside Bell Professional Plaza</h4>
+                    <p class="text-sm text-amber-700 mt-1">Prime Phoenix Metro Location</p>
+                    <p class="mt-4 text-sm text-slate-600">Professional office plaza in a desirable, high-traffic location.</p>
+                </div>
+                <div class="mt-auto pt-6 text-xs text-slate-400">Details available upon request</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-slate-900 text-white py-20">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-x-16 gap-y-12">
+                
+                <!-- Contact Info -->
+                <div>
+                    <span class="text-amber-400 font-semibold tracking-widest text-sm">LET'S CONNECT</span>
+                    <h2 class="text-5xl font-semibold tracking-tighter mt-3">We'd love to hear from you.</h2>
+                    <p class="mt-5 text-lg text-slate-300 max-w-md">Whether you have questions about our projects, services, or would like to discuss a potential opportunity, our team is ready to help.</p>
+                    
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-x-4">
+                            <i class="fa-solid fa-phone text-amber-400 mt-1 text-xl w-6"></i>
+                            <div>
+                                <div class="font-medium">Phone</div>
+                                <a href="tel:6029120777" class="text-2xl hover:text-amber-400 transition-colors">602-912-0777</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-x-4">
+                            <i class="fa-solid fa-envelope text-amber-400 mt-1 text-xl w-6"></i>
+                            <div>
+                                <div class="font-medium">Email</div>
+                                <a href="mailto:ggienko@mwestaz.com" class="hover:text-amber-400 transition-colors">ggienko@mwestaz.com</a><br>
+                                <a href="mailto:kdeisner@mwestaz.com" class="hover:text-amber-400 transition-colors">kdeisner@mwestaz.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-x-4">
+                            <i class="fa-solid fa-map-marker-alt text-amber-400 mt-1 text-xl w-6"></i>
+                            <div>
+                                <div class="font-medium">Location</div>
+                                <div class="text-slate-300">Greater Phoenix Metropolitan Area<br>Arizona</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white text-slate-900 p-8 lg:p-10 rounded-3xl">
+                    <h3 class="font-semibold text-2xl mb-6">Send us a message</h3>
+                    
+                    <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5">Full Name</label>
+                                <input type="text" name="name" required class="w-full px-5 py-3.5 border border-slate-300 rounded-2xl focus:outline-none focus:border-amber-600">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1.5">Phone Number</label>
+                                <input type="tel" name="phone" class="w-full px-5 py-3.5 border border-slate-300 rounded-2xl focus:outline-none focus:border-amber-600">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">Email Address</label>
+                            <input type="email" name="email" required class="w-full px-5 py-3.5 border border-slate-300 rounded-2xl focus:outline-none focus:border-amber-600">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">How did you find us?</label>
+                            <select name="source" class="w-full px-5 py-3.5 border border-slate-300 rounded-2xl focus:outline-none focus:border-amber-600 bg-white">
+                                <option value="">Please select</option>
+                                <option value="Google/Search">Google / Search</option>
+                                <option value="Referral">Referral</option>
+                                <option value="Existing Tenant">Existing Tenant / Client</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-1.5">Message / Questions</label>
+                            <textarea name="message" rows="5" required class="w-full px-5 py-3.5 border border-slate-300 rounded-3xl focus:outline-none focus:border-amber-600 resize-y"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full mt-2 py-4 bg-slate-900 hover:bg-black text-white font-semibold rounded-3xl transition-all flex items-center justify-center gap-x-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        
+                        <p class="text-xs text-center text-slate-400">We typically respond within 1 business day.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-8 text-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-y-4">
+            <div>© Meridian West Properties LLC. All rights reserved.</div>
+            <div class="flex items-center gap-x-6">
+                <span>Phoenix, Arizona</span>
+                <span class="hidden md:inline">•</span>
+                <a href="tel:6029120777" class="hover:text-white">602-912-0777</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- AZ/202 Modal -->
+    <div id="modal-az202" onclick="if (event.target.id === 'modal-az202') hideModal('az202')" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-auto">
+            <div class="p-8 lg:p-10">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-4xl font-semibold tracking-tight">AZ/202</h3>
+                        <p class="text-amber-700">Chandler, Arizona — Gateway to Downtown</p>
+                    </div>
+                    <button onclick="hideModal('az202')" class="text-3xl text-slate-400 hover:text-slate-600">×</button>
+                </div>
+                
+                <div class="mt-8 grid md:grid-cols-5 gap-8">
+                    <div class="md:col-span-3">
+                        <p class="text-lg">AZ/202 is Meridian West’s latest development, positioned at the Gateway to downtown Chandler. Located on a full diamond interchange at the northwest corner of Arizona Avenue &amp; the Loop 202, this premier project provides outstanding visibility and access from the new SanTan Freeway.</p>
+                        
+                        <p class="mt-6">The development offers a fantastic option for users looking to tap into the area’s skilled labor force and tremendous demographics. AZ/202 will contain a variety of product types that flow together and blend within one exciting, mixed-use development project.</p>
+                    </div>
+                    <div class="md:col-span-2 bg-slate-50 p-6 rounded-2xl text-sm">
+                        <div class="font-semibold mb-3">Key Highlights</div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li>• Full diamond interchange access</li>
+                            <li>• Outstanding visibility from SanTan Freeway</li>
+                            <li>• Mixed-use development</li>
+                            <li>• Strong demographics &amp; skilled labor pool</li>
+                            <li>• Prime Chandler location</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rose Garden Modal -->
+    <div id="modal-rose-garden" onclick="if (event.target.id === 'modal-rose-garden') hideModal('rose-garden')" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-auto">
+            <div class="p-8 lg:p-10">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-4xl font-semibold tracking-tight">Rose Garden Office Park</h3>
+                        <p class="text-amber-700">SWC 29th Avenue &amp; Rose Garden Lane, Phoenix, AZ</p>
+                    </div>
+                    <button onclick="hideModal('rose-garden')" class="text-3xl text-slate-400 hover:text-slate-600">×</button>
+                </div>
+                
+                <div class="mt-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="text-sm uppercase tracking-widest text-amber-700 mb-1">For Sale / Lease</div>
+                            <div class="text-3xl font-semibold">±17,800 SF Total</div>
+                            <div class="mt-1 text-xl">Lease: <span class="font-medium">$22.00 / SF NNN</span></div>
+                            <div class="text-xl">Sale: <span class="font-medium">$240 / SF</span></div>
+                            
+                            <div class="mt-8">
+                                <div class="font-semibold mb-3">Availability</div>
+                                <div class="text-sm">Building B (±3,962 SF available)<br>
+                                Suite 100: 1,742 SF • Suite 103: 1,286 SF</div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-sm space-y-4">
+                            <div>
+                                <span class="font-semibold">Features:</span><br>
+                                • HVAC, concrete slab &amp; insulation included<br>
+                                • 5:1,000 SF parking ratio<br>
+                                • Stunning elevations with custom ornamental ironwork, Cantera stone columns, decorative stone accents &amp; mission style tile roofs
+                            </div>
+                            
+                            <div>
+                                <span class="font-semibold">Location Highlights:</span><br>
+                                • Within 1 mile of John C. Lincoln Hospital<br>
+                                • Minutes from I-17 &amp; Loop 101<br>
+                                • Near ±650,000 SF Happy Valley Towne Center retail<br>
+                                • Close to Deer Valley Airport
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#b45309');
+        }
+        
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileBtn.querySelector('i').classList.remove('fa-times');
+                mobileBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Modal functions
+        function showModal(modalId) {
+            document.getElementById('modal-' + modalId).classList.remove('hidden');
+            document.getElementById('modal-' + modalId).classList.add('flex');
+        }
+        
+        function hideModal(modalId) {
+            const modal = document.getElementById('modal-' + modalId);
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        // Contact form handling (demo + Formspree ready)
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            // If using Formspree, this will submit normally
+            // For demo purposes, show success message
+            if (contactForm.action.includes('YOUR_FORMSPREE_ENDPOINT')) {
+                e.preventDefault();
+                const originalText = contactForm.querySelector('button').innerHTML;
+                contactForm.querySelector('button').innerHTML = '<span>Thank you! Message sent.</span>';
+                contactForm.querySelector('button').disabled = true;
+                
+                setTimeout(() => {
+                    alert("Thank you for your message! In production, this form will be connected to Formspree and submissions will be emailed directly to the team.");
+                    contactForm.reset();
+                    contactForm.querySelector('button').innerHTML = originalText;
+                    contactForm.querySelector('button').disabled = false;
+                }, 1800);
+            }
+            // Otherwise let Formspree handle it
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            
+            // Optional: Close modals with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    document.querySelectorAll('.fixed.inset-0').forEach(modal => {
+                        if (!modal.classList.contains('hidden')) {
+                            modal.classList.add('hidden');
+                            modal.classList.remove('flex');
+                        }
+                    });
+                }
+            });
+            
+            console.log('%c[Meridian West] Modern website initialized successfully.', 'color:#64748b');
+        }
+        
+        window.onload = init;
+    </script>
+</body>
+</html>
