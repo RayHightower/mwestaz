@@ -5,264 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meridian West Development</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Helvetica:wght@400;500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
         
         body {
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('MWestAZ_20260713.gif');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: #000;
-            transform: translateY(-2px);
-        }
-        
-        .section-header {
-            position: relative;
-        }
-        
-        .section-header:after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background: #000;
-            bottom: -8px;
-            left: 0;
+        .hero {
+            background: url('MWestAZ_20260713.gif') center/cover no-repeat;
+            height: 100vh;
+            min-height: 600px;
         }
     </style>
 </head>
-<body class="bg-white text-black overflow-x-hidden">
-    <!-- NAVBAR -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-                <img src="MWestAZ_20260713.gif" alt="Meridian West Logo" class="h-10 w-auto">
-                <div>
-                    <span class="text-2xl font-semibold tracking-tight">Meridian West</span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="#home" class="nav-link text-gray-600 hover:text-black">HOME</a>
-                <a href="#about" class="nav-link text-gray-600 hover:text-black">ABOUT</a>
-                <a href="#projects" class="nav-link text-gray-600 hover:text-black">PROJECTS</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-black">CONTACT</a>
-            </div>
-            
-            <a href="#contact" 
-               class="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors flex items-center gap-x-2">
-                <i class="fas fa-envelope"></i>
-                <span>GET IN TOUCH</span>
-            </a>
-        </div>
-    </nav>
-
+<body class="bg-white text-black">
+    
     <!-- HERO -->
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white relative">
-        <div class="max-w-5xl mx-auto text-center px-6">
-            <div class="inline-flex items-center gap-x-2 bg-white/90 text-black text-sm font-medium px-6 py-2.5 rounded-full mb-8">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                PHOENIX, ARIZONA
-            </div>
-            
-            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none mb-6">
-                MERIDIAN WEST<br>DEVELOPMENT
-            </h1>
-            
-            <p class="max-w-md mx-auto text-xl text-white/90 mb-12">
-                Thoughtful development. Lasting communities.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" 
-                   class="bg-white text-black px-8 py-4 rounded-full font-medium text-lg inline-flex items-center justify-center hover:bg-gray-100 transition">
-                    Inquire Now
-                </a>
-                <a href="#projects" 
-                   class="border border-white/70 text-white px-8 py-4 rounded-full font-medium text-lg inline-flex items-center justify-center hover:bg-white/10 transition">
-                    View Projects
-                </a>
-            </div>
-        </div>
+    <section class="hero flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
         
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/70 text-xs tracking-widest">
-            <div>SCROLL</div>
-            <i class="fas fa-chevron-down mt-2 animate-bounce"></i>
+        <div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
+            <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter text-white mb-8">
+                MERIDIAN WEST<br>DEVELOPMENT, LLC
+            </h1>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+    <!-- CONTACT INFORMATION -->
+    <section class="py-20">
+        <div class="max-w-md mx-auto text-center px-6">
+            <div class="space-y-8">
                 <div>
-                    <div class="section-header">
-                        <span class="uppercase tracking-widest text-sm font-medium text-gray-500">Since 2008</span>
-                    </div>
-                    <h2 class="text-5xl font-bold tracking-tight mt-3 mb-8">
-                        Creating exceptional places in the Valley of the Sun
-                    </h2>
-                    <div class="prose text-lg text-gray-600">
-                        <p>Meridian West Development, LLC is a Phoenix-based real estate development company focused on high-quality residential and mixed-use communities throughout Arizona.</p>
-                        <p>We combine thoughtful design, sustainable practices, and strategic partnerships to deliver projects that enhance neighborhoods and create lasting value.</p>
-                    </div>
+                    <p class="text-2xl font-medium">Meridian West Development, LLC</p>
                 </div>
                 
-                <div class="bg-gray-100 rounded-3xl aspect-video flex items-center justify-center overflow-hidden">
-                    <img src="MWestAZ_20260713.gif" alt="Meridian West Development" 
-                         class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="py-16 bg-black text-white">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-5xl font-semibold mb-2">50+</div>
-                <div class="text-gray-400 text-sm tracking-wider">COMMUNITIES DEVELOPED</div>
-            </div>
-            <div>
-                <div class="text-5xl font-semibold mb-2">1,200+</div>
-                <div class="text-gray-400 text-sm tracking-wider">HOMES BUILT</div>
-            </div>
-            <div>
-                <div class="text-5xl font-semibold mb-2">15</div>
-                <div class="text-gray-400 text-sm tracking-wider">YEARS EXPERIENCE</div>
-            </div>
-            <div>
-                <div class="text-5xl font-semibold mb-2">AZ</div>
-                <div class="text-gray-400 text-sm tracking-wider">BASED &amp; PROUD</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold tracking-tight mb-4">Let's Build Together</h2>
-                <p class="text-xl text-gray-600">Reach out to discuss your next opportunity</p>
-            </div>
-            
-            <div class="bg-zinc-100 rounded-3xl p-12">
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Left Column -->
-                    <div>
-                        <div class="mb-10">
-                            <img src="MWestAZ_20260713.gif" alt="Logo" class="h-16 mb-8">
-                            <h3 class="text-2xl font-semibold mb-1">Meridian West Development, LLC</h3>
-                            <p class="text-gray-600">PO Box 15270<br>Phoenix, Arizona 85060</p>
-                        </div>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-x-4">
-                                <div class="w-10 h-10 bg-black rounded-2xl flex items-center justify-center text-white">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Phone</div>
-                                    <a href="tel:6029120777" class="font-medium hover:underline">602.912.0777</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center gap-x-4">
-                                <div class="w-10 h-10 bg-black rounded-2xl flex items-center justify-center text-white">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <div class="text-sm text-gray-500">Email</div>
-                                    <a href="mailto:kdeisner@mwestaz.com" class="font-medium hover:underline">kdeisner@mwestaz.com</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="h-px bg-gray-200 w-16 mx-auto"></div>
+                
+                <div class="space-y-6 text-lg">
+                    <p>
+                        PO Box 15270<br>
+                        Phoenix, Arizona 85060
+                    </p>
                     
-                    <!-- Right Column - Simple Contact Form -->
-                    <div>
-                        <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Name</label>
-                                <input type="text" name="name" required
-                                       class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:border-black focus:ring-0 outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Email</label>
-                                <input type="email" name="email" required
-                                       class="w-full px-5 py-4 rounded-2xl border border-gray-300 focus:border-black focus:ring-0 outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Message</label>
-                                <textarea name="message" rows="5" required
-                                    class="w-full px-5 py-4 rounded-3xl border border-gray-300 focus:border-black focus:ring-0 outline-none resize-none"></textarea>
-                            </div>
-                            <button type="submit"
-                                    class="w-full bg-black text-white py-5 rounded-2xl font-medium hover:bg-gray-800 transition-all active:scale-[0.985]">
-                                SEND MESSAGE
-                            </button>
-                        </form>
-                    </div>
+                    <p>
+                        <a href="tel:6029120777" class="hover:underline">
+                            602.912.0777
+                        </a>
+                    </p>
+                    
+                    <p>
+                        Inquiries:<br>
+                        <a href="mailto:kdeisner@mwestaz.com" class="hover:underline">
+                            kdeisner@mwestaz.com
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
-                <div class="flex items-center gap-x-3">
-                    <img src="MWestAZ_20260713.gif" alt="Logo" class="h-8 opacity-75">
-                    <span class="font-medium">Meridian West Development, LLC © 2026</span>
-                </div>
-                
-                <div class="text-sm text-gray-400 flex flex-wrap justify-center gap-x-8">
-                    <a href="#" class="hover:text-white transition">Privacy</a>
-                    <a href="#" class="hover:text-white transition">Terms</a>
-                    <a href="#" class="hover:text-white transition">Arizona Real Estate</a>
-                </div>
-                
-                <div class="text-sm text-gray-400">
-                    Phoenix, Arizona
-                </div>
-            </div>
+    <footer class="bg-black text-white py-8 text-center text-sm">
+        <div class="max-w-md mx-auto px-6">
+            © 2026 Meridian West Development, LLC • Phoenix, Arizona
         </div>
     </footer>
 
     <script>
-        // Tailwind script already included via CDN
-        // Smooth scrolling
+        // Simple smooth scroll for any future links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-        
-        // Mobile menu toggle (simple version)
-        console.log('%cMeridian West Development site ready ✅', 'color: #000; font-size: 13px;');
     </script>
 </body>
 </html>
