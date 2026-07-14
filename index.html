@@ -16,6 +16,17 @@
             background: url('MWestAZ_20260713.gif') center/cover no-repeat;
             height: 100vh;
             min-height: 600px;
+            position: relative;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -23,17 +34,28 @@
     
     <!-- HERO -->
     <section class="hero flex items-center justify-center relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
+        <!-- Dark overlay for better text readability -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
         
         <div class="relative z-10 text-center px-6 max-w-2xl mx-auto">
             <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter text-white mb-8">
                 MERIDIAN WEST<br>DEVELOPMENT, LLC
             </h1>
         </div>
+
+        <!-- Scroll Prompt -->
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/80 z-20">
+            <div class="text-xs tracking-[2px] font-medium mb-3">MORE INFORMATION BELOW</div>
+            <div class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-9-9m0 0L5 5" />
+                </svg>
+            </div>
+        </div>
     </section>
 
     <!-- CONTACT INFORMATION -->
-    <section class="py-20">
+    <section class="py-20 bg-white">
         <div class="max-w-md mx-auto text-center px-6">
             <div class="space-y-8">
                 <div>
@@ -73,7 +95,7 @@
     </footer>
 
     <script>
-        // Simple smooth scroll for any future links
+        // Smooth scrolling if needed
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
